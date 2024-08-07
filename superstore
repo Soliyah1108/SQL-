@@ -1,4 +1,4 @@
---Project Data
+#This project is going to query the following data
 
 CREATE TABLE superstore (
     item_id INTEGER PRIMARY KEY,
@@ -27,18 +27,18 @@ VALUES
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
 
---Query
+#By using SQL I was able to pull information on the items sold and their prices
 
---1 ordering price of items
+#1 ordering price of items
 select item_name, price
 from superstore
 order by price;
 
---2 average cost of all items customers willingly buy
+#2 average cost of all items customers willingly buy
 select avg(price)
 from superstore;
 
---3 sum of price of items from kitchen supplies category
+#3 sum of price of items from kitchen supplies category
 select sum(price)
 from superstore
 where category ="Kitchen Supplies";
