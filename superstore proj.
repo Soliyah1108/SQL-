@@ -1,4 +1,6 @@
-#This project is going to query the following data
+#This project is going to query the following data for specific questions
+
+#You want to pay special attention to the Integer/Text/Decimal part of table creation!
 
 CREATE TABLE superstore (
     item_id INTEGER PRIMARY KEY,
@@ -8,6 +10,8 @@ CREATE TABLE superstore (
     stock_quantity INTEGER,
     average_rating DECIMAL(3, 2)
 );
+
+#You want to pay special attention to the what categories exist because we could be filtering to find data from specific categories!
 
 INSERT INTO superstore (item_id, item_name, category, price, stock_quantity, average_rating)
 VALUES
@@ -30,15 +34,23 @@ VALUES
 #By using SQL I was able to pull information to answer questions on the items sold and their prices!
 
 #1 order the prices of items sold from least to greatest.
-select item_name, price
-from superstore
-order by price;
+select item_name, price 
+#selected a column from the table
+from superstore 
+#the table the comlumn is being selected from
+order by price; 
+#the order in which I wish to order them based off of
 
 #2 what is the average cost of all items customers are willingly buying?
-select avg(price)
-from superstore;
+select avg(price) 
+#selecting the column and aggregation I wish to use
+from superstore; 
+#the table in which the column is being pulled from
 
 #3 what is sum of the price of items from kitchen supplies category?
-select sum(price)
-from superstore
-where category ="Kitchen Supplies";
+select sum(price) 
+#selecting the column and aggregation I wish to use
+from superstore 
+#the table in which the column is being pulled from
+where category ="Kitchen Supplies"; 
+#filtering the results to just portray the sum from kitchen supplies.
