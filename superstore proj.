@@ -31,7 +31,7 @@ VALUES
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
 
-#By using SQL I was able to pull information to answer questions on the items sold and their prices!
+#By using SQL I was able to pull information to answer questions on the items sold and prices!
 
 #1 order the prices of items sold from least to greatest.
 select item_name, price 
