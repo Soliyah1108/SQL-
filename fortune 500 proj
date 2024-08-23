@@ -63,3 +63,9 @@ else "no"
 end as provide_healthcare
 from fortune_companies
 order by healthcare_benefits desc;
+
+##Companies that provide above average PTO days (10 days)
+select company_name, sum(paid_time_off_days) as PTO_days
+from fortune_companies
+group by company_name
+having sum(paid_time_off_days)>10;
