@@ -69,3 +69,10 @@ select company_name, sum(paid_time_off_days) as PTO_days
 from fortune_companies
 group by company_name
 having sum(paid_time_off_days)>10;
+
+##industries that provide above average PTO and Maternity Leave
+select industry, paid_time_off_days, maternity_leave_weeks
+from fortune_companies
+where paid_time_off_days >= 10 
+and maternity_leave_weeks >=12
+order by paid_time_off_days desc;
