@@ -56,7 +56,7 @@ VALUES
     ('Company JJ', 'Manufacturing', 370.0, 3100, 1, 20, 12, 7.6),
     ('Company KK', 'Healthcare', 150.2, 3400, 0, 16, 8, 5.3);
 
-##Which companies provide healthcare benefits?
+#Which companies provide healthcare benefits?
 select company_name,
 case when healthcare_benefits = 1 then "yes"
 else "no"
@@ -64,15 +64,20 @@ end as provide_healthcare
 from fortune_companies
 order by healthcare_benefits desc;
 
-##Companies that provide above average PTO days (10 days)
+#Companies that provide above average PTO days (10 days)
 select company_name, sum(paid_time_off_days) as PTO_days
 from fortune_companies
 group by company_name
 having sum(paid_time_off_days)>10;
 
-##industries that provide above average PTO and Maternity Leave
+#industries that provide above average PTO and Maternity Leave
 select industry, paid_time_off_days, maternity_leave_weeks
 from fortune_companies
 where paid_time_off_days >= 10 
 and maternity_leave_weeks >=12
 order by paid_time_off_days desc;
+
+#company with the most revenue in retail
+select company_name, max(revenue) as max_revenue
+from fortune_companies
+where industry = 'Retail';
